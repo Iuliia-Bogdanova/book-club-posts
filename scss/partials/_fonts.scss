@@ -1,0 +1,43 @@
+/* font-family: 'Indie Flower', cursive;
+font-family: 'Merriweather Sans', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+@font-face {
+    font-family: 'Indie Flower', cursive; 
+    src: url(../../assets/fonts/MerriweatherSans-SemiBold.woff2) format('woff2');
+    src: url(../../assets/fonts/IndieFlower-Regular.woff) format('woff');
+    src: url(../../assets/fonts/IndieFlower-Regular.ttf) format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans', sans-serif; 
+    src: url(../../assets/fonts/MerriweatherSans-Light.woff2) format('woff2');
+    src: url(../../assets/fonts/MerriweatherSans-Light.woff) format('woff');
+    src: url(../../assets/fonts/MerriweatherSans-Light.ttf) format('ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans', sans-serif; 
+    src: url(../../assets/fonts/MerriweatherSans-SemiBold.woff2) format('woff2');
+    src: url(../../assets/fonts/MerriweatherSans-SemiBold.woff) format('woff');
+    src: url(../../assets/fonts/MerriweatherSans-SemiBold.ttf) format('ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif; 
+    src: url(../../assets/fonts/MerriweatherSans-Light.woff2) format('woff2');
+    src: url(../../assets/fonts/MerriweatherSans-Light.woff) format('woff');
+    src: url(../../assets/fonts/MerriweatherSans-Light.ttf) format('ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
