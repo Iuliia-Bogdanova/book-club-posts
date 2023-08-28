@@ -7,7 +7,44 @@
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
-    <h1>reading club blog</h1>
+
+    <div class="container">
+        <header class="header">
+            <h1>reading club blog</h1>
             <h2>here you can find the best posts of our club members</h2>
+        </header>
+
+        <main class="blog">
+            
+            <section class="posts">
+                
+                <div class="icons-posts">
+                    <button class="icon icon-post-search">
+                        <img src="./assets/icons/manage_search.svg" alt="Search">
+                    </button>
+                    <button class="icon icon-post-del">
+                        <img src="./assets/icons/scan_delete.svg" alt="Delete">
+                    </button>
+                </div>
+
+                <div class="posts-form">
+                    <div class="success-post">
+                        <p class="title-post"></p>
+                        <hr class="divider">
+                        <p class="item-post"></p>
+                    </div>
+                </div>
+                <div class="error-post">
+                    <h3>no posts to show</h3>
+                </div>
+            
+            </section>
+        
+        </main>
+
+    </div>
+    
+
+    <script src="./scripts/main.js"></script>
 </body>
 </html>

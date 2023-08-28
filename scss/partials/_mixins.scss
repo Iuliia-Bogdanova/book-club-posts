@@ -1,0 +1,45 @@
+@mixin bg-body {
+    background-image: url(../../assets/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@mixin font-title {
+    font-family: $font-title;
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+@mixin font-subtitle {
+    font-family: $font-subtitle;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+@mixin font-input {
+    font-family: $font-subtitle;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: right;
+}
+
+@mixin font-text {
+    font-family: $font-text;
+    font-size: 24px;
+    text-align: right;
+}
+
+@mixin main-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: right;
+}
