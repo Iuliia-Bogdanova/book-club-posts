@@ -484,6 +484,10 @@ p {
   padding-right: 2px;
 }
 
+.error-post {
+  display: none;
+}
+
 @media (max-width: 480px) {
   .header {
     margin: 10px auto;
