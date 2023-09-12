@@ -43,3 +43,9 @@
     justify-content: end;
     text-align: right;
 }
+
+@mixin input-border {
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid $main-text-color;
+}

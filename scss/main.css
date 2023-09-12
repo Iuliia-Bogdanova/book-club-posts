@@ -421,11 +421,20 @@ h3 {
   padding: 20px 0;
 }
 
+.box-search {
+  display: flex;
+  justify-content: end;
+  text-align: right;
+  align-items: center;
+  padding: 10px 0;
+  gap: 16px;
+  transition: transform 0.2s ease;
+}
+
 .icons-posts {
   display: flex;
   justify-content: space-between;
-  width: 40%;
-  gap: 20px;
+  gap: 16px;
   margin-left: auto;
   padding: 10px 0;
   transition: transform 0.2s ease;
@@ -442,6 +451,28 @@ h3 {
   transform: scale(1.2);
 }
 
+.input {
+  width: 60%;
+  padding: 6px 0;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #41403f;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: right;
+  text-align: left;
+  cursor: pointer;
+}
+
+.input:hover {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  outline: none;
+}
+
 .posts-form {
   display: flex;
   flex-direction: column;
@@ -450,11 +481,11 @@ h3 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 20px;
-  margin: 20px 0;
+  gap: 30px;
+  margin: 30px 0;
 }
 
-.success-post {
+.card {
   height: 300px;
   width: 280px;
   justify-content: flex-end;
@@ -503,7 +534,7 @@ p {
   .posts {
     margin: 10px auto 30px;
   }
-  .success-post {
+  .card {
     font-size: 20px;
   }
 }/*# sourceMappingURL=main.css.map */
