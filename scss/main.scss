@@ -18,12 +18,13 @@ body {
 
 .container {
     @include container;
+    // height: calc(100vh + 100px);
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    margin: 30px auto;
+    margin: 0px auto 30px;
     padding: 20px 0;
 }
 
@@ -65,7 +66,6 @@ h3 {
 .icons-posts {
     display: flex;
     justify-content: space-between;
-    // width: 40%;
     gap: 16px;
     margin-left: auto;
     padding: 10px 0;
@@ -106,7 +106,7 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 30px;
+    gap: 70px;
     margin: 30px 0;
 }
 
@@ -141,13 +141,9 @@ p {
     padding-right: 2px;
 }
 
-.error-post {
-    display: none;
-}
-
 @media (max-width: 480px) {
     .header {
-        margin: 10px auto;
+        // margin: 10px auto;
     }
     h2 {
         font-size: 24px;
@@ -160,7 +156,8 @@ p {
     .posts {
         margin: 10px auto 30px;
     }
-    .card {
+    .card,
+    .input {
         font-size: 20px;
     }
 }
