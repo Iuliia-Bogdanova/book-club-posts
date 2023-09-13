@@ -7,7 +7,7 @@ import { errorPost } from "./cards.mjs";
 import { input } from "./cards.mjs";
 
 const apiPosts =
-  "https://dummyjson.com/posts?limit=40&skip=0&select=title,tags,body,id";
+  "https://dummyjson.com/posts?limit=60&skip=0&select=title,tags,body,id";
 const searchButton = document.querySelector(".icon-post-search");
 searchButton.addEventListener("click", getPosts);
 const deleteButton = document.querySelector(".icon-post-del");
@@ -38,14 +38,9 @@ function getPosts() {
         if (filteredPosts.length > 0) {
           renderPosts(filteredPosts);
           
-          // отрисовываю первые 6 отфильтрованных постов
-          // const limitedPosts = filteredPosts.slice(0, 6);
-          // renderPosts(limitedPosts);
-
           // создаю Intersection Observer
           observer = new IntersectionObserver(
             function (entries) {
-              
               // подгружаю следующие посты, которые проходят порог видимости
               entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -62,11 +57,6 @@ function getPosts() {
           if (lastCard) {
             observer.observe(lastCard);
             console.log(lastCard);
-          }
-          // проверяю, все ли посты загружены
-          if (cards.children.length >= filteredPosts.length) {
-            // отключаю Intersection Observer
-            observer.disconnect();
           }
         } else {
           // если посты не найдены, вывожу сообщение об ошибке
@@ -94,9 +84,6 @@ function loadMorePosts() {
       console.log(data);
 
       // объединяю посты
-      const newPosts = data.post.filter((post) => {
-        return !filteredPosts.some((filteredPosts) => filteredPosts.id === post.id);
-      })
       filteredPosts = filteredPosts.concat(newPosts);
 
       renderPosts(filteredPosts);
