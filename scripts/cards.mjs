@@ -11,6 +11,11 @@ function deletePosts() {
     if (observer) {
         observer.disconnect(); // отключаю Intersection Observer
     }
+    // скрываю кнопку-клон
+    const delCloneButton = document.querySelectorAll(".del-clone");
+    delCloneButton.forEach((button) => {
+        button.style.display = "none";
+    });
 }
 
 // создаю элементы разметки
@@ -44,7 +49,26 @@ function renderPosts(posts) {
         content.innerHTML = post.body;
         append(card, content);
 
+        // id
+        const ident = createNode("p");
+        ident.innerHTML = post.id;
+        append(card, ident);
+
         append(cards, card);
+    });
+    
+    // создаю кнопку-клон delete
+    const delCloneButton = document.querySelectorAll(".del-clone");
+
+    // удаляю обработчики событий для кнопок
+    delCloneButton.forEach((button) => {
+        button.removeEventListener("click", deletePosts);
+    });
+
+    // добавляю обработчик событий для клона delete
+    delCloneButton.forEach((button) => {
+        button.addEventListener("click", deletePosts);
+        button.style.display = "block";
     });
 }
 

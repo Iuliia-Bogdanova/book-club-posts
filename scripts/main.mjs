@@ -6,7 +6,8 @@ import { cards } from "./cards.mjs";
 import { errorPost } from "./cards.mjs";
 import { input } from "./cards.mjs";
 
-const apiPosts = "https://dummyjson.com/posts?limit=70&skip=0&select=title,tags,body";
+const apiPosts =
+  "https://dummyjson.com/posts?limit=40&skip=0&select=title,tags,body,id";
 const searchButton = document.querySelector(".icon-post-search");
 searchButton.addEventListener("click", getPosts);
 const deleteButton = document.querySelector(".icon-post-del");
@@ -26,9 +27,7 @@ function getPosts() {
         console.log(data);
 
         // фильтрую посты по keyword
-        filteredPosts = data.posts.filter((post) =>
-          post.tags.includes(tag)
-        );
+        filteredPosts = data.posts.filter((post) => post.tags.includes(tag));
 
         console.log(filteredPosts);
 
@@ -38,14 +37,19 @@ function getPosts() {
         // проверяю, есть ли посты по тегу
         if (filteredPosts.length > 0) {
           renderPosts(filteredPosts);
+          
+          // отрисовываю первые 6 отфильтрованных постов
+          // const limitedPosts = filteredPosts.slice(0, 6);
+          // renderPosts(limitedPosts);
 
           // создаю Intersection Observer
           observer = new IntersectionObserver(
             function (entries) {
               
-              // если одна из записей видна, подгружаю больше постов
+              // подгружаю следующие посты, которые проходят порог видимости
               entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
+                  console.log("Intersection observed");
                   loadMorePosts();
                 }
               });
@@ -77,6 +81,39 @@ function getPosts() {
         console.log(error);
       });
   }
+}
+
+function loadMorePosts() {
+  // увеличиваю лимит загрузки постов
+  const newLimit = cards.children.length + 6;
+
+  // загружаю следующие посты из API
+  fetch(`${apiPosts}&limit=${newLimit}&skip=${filteredPosts.length}`)
+    .then((resp) => resp.json())
+    .then(function (data) {
+      console.log(data);
+
+      // объединяю посты
+      const newPosts = data.post.filter((post) => {
+        return !filteredPosts.some((filteredPosts) => filteredPosts.id === post.id);
+      })
+      filteredPosts = filteredPosts.concat(newPosts);
+
+      renderPosts(filteredPosts);
+
+      // проверяю, все ли посты загружены
+      if (cards.children.length >= filteredPosts.length) {
+        // отключаю Intersection Observer
+        observer.disconnect();
+      } else {
+        // обновляю observer
+        observer.unobserve(cards.querySelector(".card:last-child"));
+        observer.observe(cards.querySelector(".card:last-child"));
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 getPosts();

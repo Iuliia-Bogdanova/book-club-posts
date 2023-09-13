@@ -437,7 +437,7 @@ h3 {
   flex-direction: column;
   justify-content: end;
   text-align: right;
-  margin: 30px auto 40px;
+  margin: 0px auto 40px;
   padding: 20px 0;
 }
 
@@ -528,6 +528,7 @@ p {
 }
 
 .del-clone {
+  display: none;
   margin-left: auto;
 }
 
@@ -539,9 +540,6 @@ p {
   h3 {
     font-size: 20px;
     padding: 10px 0;
-  }
-  .posts {
-    margin: 10px auto 30px;
   }
   .card,
   .input {
