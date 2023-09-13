@@ -410,6 +410,7 @@ h3 {
   text-transform: lowercase;
   font-size: 24px;
   padding: 20px 0;
+  line-height: 1;
 }
 
 .posts {
