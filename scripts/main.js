@@ -23,7 +23,33 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
-// получаем и отрисовываем элементы
+// отрисовка карточек
+function renderPosts(posts) {
+  posts.forEach(function (post) {
+    // контейнер для карточки
+    const card = createNode("div");
+    card.classList.add("card");
+
+    // заголовок карточки
+    const title = createNode("h3");
+    title.innerHTML = post.title;
+    append(card, title);
+
+    // список тегов
+    const tags = createNode("h4");
+    tags.innerHTML = post.tags;
+    append(card, tags);
+
+    // содержимое карточки
+    const content = createNode("p");
+    content.innerHTML = post.body;
+    append(card, content);
+
+    append(cards, card);
+  });
+}
+
+// получаем элементы
 function getPosts() {
   const tag = input.value.toLowerCase().trim();
 
@@ -46,28 +72,7 @@ function getPosts() {
 
         // проверяем, есть ли посты по тегу
         if (filteredPosts.length > 0) {
-          filteredPosts.forEach(function (post) {
-            // контейнер для карточки
-            const card = createNode("div");
-            card.classList.add("card");
-
-            // заголовок карточки
-            const title = createNode("h3");
-            title.innerHTML = post.title;
-            append(card, title);
-
-            // список тегов
-            const tags = createNode("h4");
-            tags.innerHTML = post.tags;
-            append(card, tags);
-
-            // содержимое карточки
-            const content = createNode("p");
-            content.innerHTML = post.body;
-            append(card, content);
-
-            append(cards, card);
-          });
+          renderPosts(filteredPosts);
         } else {
           // если посты не найдены, выводим сообщение об ошибке
           const errorMessage = createNode("h3");
