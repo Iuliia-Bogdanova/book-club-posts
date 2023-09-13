@@ -19,7 +19,7 @@ body::-webkit-scrollbar,
 
 body::-webkit-scrollbar-thumb,
 .card::-webkit-scrollbar-thumb {
-    background-color: $scrollbar-cocor;
+    background-color: $scrollbar-color;
     border-radius: 10px;
     border: 1px solid $bg-color;
 }
