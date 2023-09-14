@@ -375,14 +375,14 @@ body::-webkit-scrollbar,
 
 body::-webkit-scrollbar-thumb,
 .card::-webkit-scrollbar-thumb {
-  background-color: #abada1;
+  background-color: #d2c9bd;
   border-radius: 10px;
   border: 1px solid #d2c9bd;
 }
 
 body::-webkit-scrollbar-thumb:hover,
 .card::-webkit-scrollbar-thumb:hover {
-  background-color: #41403f;
+  background-color: #abada1;
 }
 
 body {
