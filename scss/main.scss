@@ -31,7 +31,11 @@ body::-webkit-scrollbar-thumb:hover,
 
 body {
     min-height: 100vh;
-    @include bg-body;
+    // @include bg-body;
+    background-image: url(../assets/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: $main-text-color;
 }
 

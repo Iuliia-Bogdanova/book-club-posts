@@ -63,7 +63,7 @@ function getPosts() {
           const errorMessage = createNode("h3");
           errorMessage.classList.add("error-message");
           errorMessage.innerHTML =
-            "sorry, No posts found. <br /><br />Please try using keywords such as:<br /><br />'american' 'english' 'french'<br />'classic' 'history' 'fiction'<br />'mystery' 'magical'<br />'love', 'crime'";
+            "sorry, No posts found. <br /><br />Please try using keywords such as:<br /><br />'american' 'english' 'french'<br />'classic' 'history' 'fiction'<br />'mystery' 'magical'<br />'love' 'crime'";
           append(errorPost, errorMessage);
         }
       })
