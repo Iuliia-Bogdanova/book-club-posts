@@ -387,6 +387,7 @@ body::-webkit-scrollbar-thumb:hover,
 
 body {
   min-height: 100vh;
+  background: #d2c9bd;
   background-image: url(../assets/img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
