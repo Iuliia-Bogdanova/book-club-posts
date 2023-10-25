@@ -12,8 +12,17 @@ const searchButton = document.querySelector(".icon-post-search");
 searchButton.addEventListener("click", getPosts);
 const deleteButton = document.querySelector(".icon-post-del");
 deleteButton.addEventListener("click", deletePosts);
+const searchInput = document.querySelector(".input");
 let observer;
 let filteredPosts;
+
+searchInput.addEventListener("keydown", function (event) {
+    // проверяю, была ли нажата клавиша Enter, Tab или Space
+    if (event.key === "Enter" || event.key === "Tab" || event.key === " ") {
+        event.preventDefault(); // предотвращаю действие по умолчанию для этих клавиш
+        getPosts();
+    }
+});
 
 // получаю посты по keyword
 function getPosts() {
