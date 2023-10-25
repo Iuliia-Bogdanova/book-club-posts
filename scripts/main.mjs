@@ -7,7 +7,7 @@ import { errorPost } from "./cards.mjs";
 import { input } from "./cards.mjs";
 
 const apiPosts =
-  "https://dummyjson.com/posts?limit=60&skip=0&select=title,tags,body,id";
+  "https://dummyjson.com/posts?limit=40&skip=0&select=title,tags,body,id";
 const searchButton = document.querySelector(".icon-post-search");
 searchButton.addEventListener("click", getPosts);
 const deleteButton = document.querySelector(".icon-post-del");
